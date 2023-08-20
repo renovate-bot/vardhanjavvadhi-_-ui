@@ -38,7 +38,7 @@ function Header(props) {
       password: newUser.password,
     };
 
-    let url = "https://zomato-clone-api-4.onrender.com/api/save-user-data";
+    let url = "https://zomato-app-vardhan-4598.onrender.com/api/save-user-data";
     let { data } = await axios.post(url, sendData);
     // let modal = new window.bootstrap.Modal(regModal.current, {
     //   backdrop: "static",
@@ -58,7 +58,7 @@ function Header(props) {
         username: newUser.mobile,
         password: newUser.password,
       };
-      let url = "https://zomato-clone-api-4.onrender.com/api/login";
+      let url = "https://zomato-app-vardhan-4598.onrender.com/api/login";
       let { data } = await axios.post(url, sendData);
       if (data.call === true) {
         alert("User Login Successfully");

@@ -11,12 +11,12 @@ function Restaurant() {
   let [rMenuList, setRMenuList] = useState([]);
   let [totalPrice, setTotalPrice] = useState(0);
   let getRestaurantDetails = async () => {
-    let url = "https://zomato-clone-api-4.onrender.com/api/get-restaurant-details/" + id;
+    let url = "https://zomato-app-vardhan-4598.onrender.com/api/get-restaurant-details/" + id;
     let { data } = await axios.get(url);
     setRDetails(data.result);
   };
   let getMenuItemList = async () => {
-    let url = "https://zomato-clone-api-4.onrender.com/api/get-menu-item-list/" + id;
+    let url = "https://zomato-app-vardhan-4598.onrender.com/api/get-menu-item-list/" + id;
     let { data } = await axios.get(url);
      setRMenuList(data.result);
   };
@@ -38,7 +38,7 @@ function Restaurant() {
   };
 
   let getPaymentView = async () => {
-    const url = "https://zomato-clone-api-4.onrender.com/api/create-order";
+    const url = "https://zomato-app-vardhan-4598.onrender.com/api/create-order";
     let { data } = await axios.post(url, { amount: totalPrice });
 
     let options = {
@@ -56,7 +56,7 @@ function Restaurant() {
           order_id: response.razorpay_order_id,
           signature: response.razorpay_signature,
         };
-        let url = "https://zomato-clone-api-4.onrender.com/api/verify-payment";
+        let url = "https://zomato-app-vardhan-4598.onrender.com/api/verify-payment";
         let { data } = await axios.post(url, sendData);
         console.log(data);
       },

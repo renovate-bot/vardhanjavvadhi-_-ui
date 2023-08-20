@@ -29,7 +29,7 @@ function Home() {
 
   let getMealTypeList = async () => {
     try {
-      let url = "https://zomato-clone-api-4.onrender.com/api/get-meal-type-list";
+      let url = "https://zomato-app-vardhan-4598.onrender.com/api/get-meal-type-list";
       let response = await axios.get(url);
       let data = response.data;
       setMeals(data.result);
@@ -40,7 +40,7 @@ function Home() {
   };
   let getLocationList = async () => {
     try {
-      let url = "https://zomato-clone-api-4.onrender.com/api/get-location-list";
+      let url = "https://zomato-app-vardhan-4598.onrender.com/api/get-location-list";
       let response = await axios.get(url);
       let data = response.data;
       setLocations(data.result);
@@ -51,7 +51,7 @@ function Home() {
   };
   let getRestaurantListByLocId = async () => {
     let url =
-      "https://zomato-clone-api-4.onrender.com/api/get-restaurant-list-by-loc-id" +
+      "https://zomato-app-vardhan-4598.onrender.com/api/get-restaurant-list-by-loc-id" +
       selectLocation.location_id;
     let { data } = await axios.get(url);
     setRestaurantList({
