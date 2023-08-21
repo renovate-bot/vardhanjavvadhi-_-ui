@@ -11,14 +11,14 @@ function Restaurant() {
   let [rMenuList, setRMenuList] = useState([]);
   let [totalPrice, setTotalPrice] = useState(0);
   let getRestaurantDetails = async () => {
-    let url = "https://zomato-app-vardhan-4598.onrender.com/api/get-restaurant-details/" + id;
+    let url = "https://zomato-clone-api-5pn0.onrender.com/api/get-restaurant-details/" + id;
     let { data } = await axios.get(url);
     setRDetails(data.result);
   };
   let getMenuItemList = async () => {
-    let url = "https://zomato-app-vardhan-4598.onrender.com/api/get-menu-item-list/" + id;
+    let url = "https://zomato-clone-api-5pn0.onrender.com/api/get-menu-item-list/" + id;
     let { data } = await axios.get(url);
-     setRMenuList(data.result);
+    setRMenuList(data.result);
   };
 
   let incQty = (index) => {
@@ -38,15 +38,15 @@ function Restaurant() {
   };
 
   let getPaymentView = async () => {
-    const url = "https://zomato-app-vardhan-4598.onrender.com/api/create-order";
+    const url = "https://zomato-clone-api-5pn0.onrender.com/api/create-order";
     let { data } = await axios.post(url, { amount: totalPrice });
 
     let options = {
-      key: "rzp_test_RB0WElnRLezVJ5", // Enter the Key ID generated from the Dashboard
+      key: "rzp_test_VZDmZ1zvcWIXak", // Enter the Key ID generated from the Dashboard
       amount: totalPrice * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency: "INR",
       name: "Zomato App",
-      description: "Make Your Order Now",
+      description: "Make Your Now",
       image:
         "https://i.pinimg.com/originals/1a/17/ed/1a17ed134ffeb3461f5d0f3ca0ee227d.png",
       order_id: data.order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
@@ -56,14 +56,14 @@ function Restaurant() {
           order_id: response.razorpay_order_id,
           signature: response.razorpay_signature,
         };
-        let url = "https://zomato-app-vardhan-4598.onrender.com/api/verify-payment";
+        let url = "https://zomato-clone-api-5pn0.onrender.com/api/verify-payment";
         let { data } = await axios.post(url, sendData);
         console.log(data);
       },
       prefill: {
-        name: "Javvadhi vardhan",
-        email: "vardhan@gmail.com",
-        contact: "7894561230",
+        name: "Navyageetha",
+        email: "navyageethaallu@gmail.com",
+        contact: "9553545659",
       },
     };
     var rzp1 = new window.Razorpay(options);
@@ -122,7 +122,6 @@ function Restaurant() {
                     aria-label="Close"
                   ></button>
                 </div>
-          
                 <div className="modal-body ">
                   {rMenuList.map((menu, index) => {
                     return (
@@ -215,7 +214,7 @@ function Restaurant() {
                       className="form-control"
                       id="exampleFormControlInput1"
                       placeholder="Enter full Name"
-                      value="VardhanJavvadhi"
+                      value="navya"
                       onChange={() => {}}
                     />
                   </div>
@@ -231,7 +230,7 @@ function Restaurant() {
                       className="form-control"
                       id="exampleFormControlInput1"
                       placeholder="name@example.com"
-                      value="vardhan@gmail.com"
+                      value="navyageethallu@gmail.com"
                       onChange={() => {}}
                     />
                   </div>
@@ -246,7 +245,7 @@ function Restaurant() {
                       className="form-control"
                       id="exampleFormControlTextarea1"
                       rows="3"
-                      value="Eluru"
+                      value="Bangalore"
                       onChange={() => {}}
                     ></textarea>
                   </div>
