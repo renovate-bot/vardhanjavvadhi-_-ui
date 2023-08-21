@@ -29,7 +29,7 @@ function Home() {
 
   let getMealTypeList = async () => {
     try {
-      let url = "https://zomato-app-vardhan-4598.onrender.com/api/get-meal-type-list";
+      let url = "https://zomato-app-vardhan-4598.onrender.com/api/get-mealtype-list";
       let response = await axios.get(url);
       let data = response.data;
       setMeals(data.result);
