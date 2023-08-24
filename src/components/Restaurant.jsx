@@ -61,9 +61,9 @@ function Restaurant() {
         console.log(data);
       },
       prefill: {
-        name: "Navyageetha",
-        email: "navyageethaallu@gmail.com",
-        contact: "9553545659",
+        name: "vardhanjavvadhi",
+        email: "Vardhan123@gmail.com",
+        contact: "7894561230",
       },
     };
     var rzp1 = new window.Razorpay(options);
@@ -214,7 +214,7 @@ function Restaurant() {
                       className="form-control"
                       id="exampleFormControlInput1"
                       placeholder="Enter full Name"
-                      value="navya"
+                      value="vardhanjavvadhi"
                       onChange={() => {}}
                     />
                   </div>
@@ -230,7 +230,7 @@ function Restaurant() {
                       className="form-control"
                       id="exampleFormControlInput1"
                       placeholder="name@example.com"
-                      value="navyageethallu@gmail.com"
+                      value="vardhan1234@gmail.com"
                       onChange={() => {}}
                     />
                   </div>
